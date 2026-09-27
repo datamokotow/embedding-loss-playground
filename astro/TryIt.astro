@@ -1,0 +1,23 @@
+---
+// Button that loads a loss into the playground and starts training.
+import '../src/playground.css'
+interface Props {
+  loss: string
+  world?: string
+  cfg?: Record<string, number | boolean>
+  label?: string
+}
+const { loss, world, cfg, label } = Astro.props
+---
+
+<span class='ll not-prose'>
+  <button
+    class='ll-try'
+    data-ll-loss={loss}
+    data-ll-world={world}
+    data-ll-cfg={cfg ? JSON.stringify(cfg) : undefined}
+  >
+    <span aria-hidden='true'>▶</span>
+    {label ?? 'Train it in the playground'}
+  </button>
+</span>

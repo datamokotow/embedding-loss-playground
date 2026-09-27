@@ -1,0 +1,489 @@
+/* Shared styles for the embedding-loss components. Uses the site's theme tokens. */
+.ll {
+  --ll-fg: hsl(var(--foreground));
+  --ll-muted: hsl(var(--muted-foreground));
+  --ll-border: hsl(var(--border));
+  --ll-bg: hsl(var(--background));
+  --ll-soft: hsl(var(--foreground) / 0.035);
+  --ll-accent: hsl(var(--primary));
+  --ll-seq: #2a78d6;
+  --c0: #2a78d6;
+  --c1: #eb6834;
+  --c2: #1baf7a;
+  --c3: #eda100;
+  --c4: #e87ba4;
+  --c5: #008300;
+  color: var(--ll-fg);
+  font-size: 0.925rem;
+  line-height: 1.5;
+}
+.dark .ll {
+  --ll-soft: hsl(var(--foreground) / 0.05);
+  --ll-seq: #3987e5;
+  --c0: #3987e5;
+  --c1: #d95926;
+  --c2: #199e70;
+  --c3: #c98500;
+  --c4: #d55181;
+  --c5: #008300;
+}
+.ll *,
+.ll *::before,
+.ll *::after {
+  box-sizing: border-box;
+}
+.ll-box {
+  border: 1px solid var(--ll-border);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  background: var(--ll-bg);
+}
+.ll-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ll-muted);
+  margin: 0 0 0.4rem;
+  font-weight: 500;
+}
+.ll-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.ll-chip {
+  font: inherit;
+  font-size: 0.85rem;
+  border: 1px solid var(--ll-border);
+  background: transparent;
+  color: var(--ll-fg);
+  border-radius: 999px;
+  padding: 0.3rem 0.8rem;
+  cursor: pointer;
+  transition:
+    border-color 0.15s,
+    background 0.15s;
+  min-height: 2rem;
+}
+.ll-chip:hover {
+  border-color: var(--ll-accent);
+}
+.ll-chip[aria-pressed='true'] {
+  background: var(--ll-fg);
+  color: var(--ll-bg);
+  border-color: var(--ll-fg);
+}
+.ll-chip small {
+  opacity: 0.7;
+  margin-left: 0.3rem;
+}
+.ll-btn {
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid var(--ll-fg);
+  background: var(--ll-fg);
+  color: var(--ll-bg);
+  border-radius: 0.5rem;
+  padding: 0.4rem 0.9rem;
+  cursor: pointer;
+  min-height: 2.25rem;
+}
+.ll-btn.ghost {
+  background: transparent;
+  color: var(--ll-fg);
+  border-color: var(--ll-border);
+}
+.ll-btn:hover {
+  opacity: 0.88;
+}
+.ll-btn:focus-visible,
+.ll-chip:focus-visible {
+  outline: 2px solid var(--ll-accent);
+  outline-offset: 2px;
+}
+.ll-try {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid var(--ll-border);
+  border-radius: 0.5rem;
+  padding: 0.35rem 0.8rem;
+  background: var(--ll-soft);
+  color: var(--ll-fg);
+  cursor: pointer;
+  margin: 0.25rem 0 1rem;
+}
+.ll-try:hover {
+  border-color: var(--ll-accent);
+}
+.ll-sw {
+  display: inline-block;
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 2px;
+  flex: none;
+}
+.ll-mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.82em;
+}
+.ll-tip {
+  position: fixed;
+  z-index: 50;
+  pointer-events: none;
+  background: var(--ll-fg);
+  color: var(--ll-bg);
+  font-size: 0.78rem;
+  line-height: 1.35;
+  padding: 0.35rem 0.55rem;
+  border-radius: 0.4rem;
+  max-width: 16rem;
+}
+
+/* ---- playground ---- */
+
+.ll-pg {
+  padding: 1rem;
+}
+.ll-pg [hidden] {
+  display: none !important;
+}
+.ll-pg .ll-hint {
+  text-transform: none;
+  letter-spacing: 0;
+  opacity: 0.8;
+}
+.ll-pg-head {
+  display: grid;
+  gap: 0.9rem;
+}
+.ll-pg-how {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+  margin-top: 1rem;
+  padding: 0.85rem;
+  border-radius: 0.6rem;
+  background: var(--ll-soft);
+}
+@media (min-width: 720px) {
+  .ll-pg-how {
+    grid-template-columns: 1fr 1.15fr;
+  }
+}
+.ll-pg-how p {
+  margin: 0;
+}
+.ll-pg-lossname {
+  font-weight: 600;
+  margin-bottom: 0.25rem !important;
+}
+.ll-pg-lossname small {
+  font-weight: 400;
+  color: var(--ll-muted);
+}
+.ll-rowtbl {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.78rem;
+  table-layout: fixed;
+}
+.ll-rowtbl th {
+  text-align: left;
+  font-weight: 500;
+  color: var(--ll-muted);
+  padding: 0.15rem 0.35rem;
+  border-bottom: 1px solid var(--ll-border);
+}
+.ll-rowtbl td {
+  padding: 0.2rem 0.35rem;
+  border-bottom: 1px solid var(--ll-border);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ll-rowtbl td.num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  width: 3.5rem;
+}
+.ll-rowtbl th.num {
+  text-align: right;
+  width: 3.5rem;
+}
+.ll-pg-controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr));
+  gap: 0.6rem 1rem;
+  margin-top: 1rem;
+}
+.ll-pg-controls label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8rem;
+  color: var(--ll-muted);
+}
+.ll-pg-controls output {
+  color: var(--ll-fg);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  margin-left: 0.3rem;
+}
+.ll-pg-controls label > output {
+  position: absolute;
+  visibility: hidden;
+}
+.ll-pg-controls .ll-lbl {
+  display: flex;
+  justify-content: space-between;
+}
+.ll-pg-controls input[type='range'] {
+  width: 100%;
+  accent-color: var(--ll-fg);
+  margin-top: 0.2rem;
+}
+.ll-pg-controls .ll-check {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--ll-fg);
+}
+.ll-check input {
+  accent-color: var(--ll-fg);
+  width: 1rem;
+  height: 1rem;
+}
+.ll-pg-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.ll-pg-status {
+  font-size: 0.8rem;
+  color: var(--ll-muted);
+  font-variant-numeric: tabular-nums;
+  margin-left: auto;
+}
+.ll-pg-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.9rem;
+  margin-top: 1rem;
+}
+@media (min-width: 720px) {
+  .ll-pg-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.ll-fig {
+  margin: 0;
+  border: 1px solid var(--ll-border);
+  border-radius: 0.6rem;
+  padding: 0.7rem;
+  min-width: 0;
+}
+.ll-fig figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.25rem 0.6rem;
+  font-size: 0.82rem;
+  margin-bottom: 0.4rem;
+}
+.ll-fig figcaption > span {
+  color: var(--ll-muted);
+  font-size: 0.75rem;
+}
+.ll-fig svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+.ll-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 0.75rem;
+  font-size: 0.72rem;
+  color: var(--ll-muted);
+  margin-top: 0.35rem;
+}
+.ll-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  white-space: nowrap;
+}
+.ll-legend svg {
+  flex: none;
+  width: 10px !important;
+}
+.ll-legend-inline {
+  margin: 0;
+}
+.ll-note {
+  font-size: 0.75rem;
+  color: var(--ll-muted);
+  margin: 0.4rem 0 0;
+}
+.ll-insp {
+  min-height: 12rem;
+}
+.ll-tiles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+.ll-tile {
+  border-radius: 0.5rem;
+  background: var(--ll-soft);
+  padding: 0.55rem 0.65rem;
+}
+.ll-tile .k {
+  font-size: 0.72rem;
+  color: var(--ll-muted);
+}
+.ll-tile .v {
+  font-size: 1.25rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.3;
+}
+.ll-tile .v small {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--ll-muted);
+}
+.ll-tile .d {
+  font-size: 0.72rem;
+  color: var(--ll-muted);
+}
+.ll-pg-search {
+  margin-top: 1rem;
+}
+.ll-input {
+  width: 100%;
+  font: inherit;
+  font-size: 0.9rem;
+  padding: 0.5rem 0.7rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--ll-border);
+  background: var(--ll-bg);
+  color: var(--ll-fg);
+}
+.ll-input:focus {
+  outline: 2px solid var(--ll-accent);
+  outline-offset: 1px;
+}
+.ll-qchips {
+  margin-top: 0.5rem;
+}
+.ll-qchips .ll-chip {
+  font-size: 0.78rem;
+  padding: 0.2rem 0.6rem;
+  min-height: 1.75rem;
+}
+.ll-res2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem;
+  margin-top: 0.75rem;
+}
+.ll-res {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 3rem 2.6rem;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  padding: 0.18rem 0;
+}
+.ll-res.top {
+  font-weight: 600;
+}
+.ll-res .n {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.ll-res .bar {
+  height: 6px;
+  border-radius: 3px;
+  background: var(--ll-soft);
+  overflow: hidden;
+}
+.ll-res .bar i {
+  display: block;
+  height: 100%;
+  border-radius: 3px;
+}
+.ll-res .s {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--ll-muted);
+}
+.ll-code {
+  margin-top: 1rem;
+  border-top: 1px solid var(--ll-border);
+  padding-top: 0.75rem;
+}
+.ll-code summary {
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+.ll-code pre {
+  margin: 0.6rem 0 0;
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  background: var(--ll-soft);
+  overflow-x: auto;
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+.ll-code .k {
+  color: var(--c4);
+}
+.ll-code .s {
+  color: var(--c2);
+}
+.ll-code .c {
+  color: var(--ll-muted);
+}
+/* svg marks */
+.ll svg text {
+  fill: var(--ll-muted);
+  font-size: 11px;
+  font-family: inherit;
+}
+.ll svg .ax {
+  stroke: var(--ll-border);
+  stroke-width: 1;
+}
+.ll svg .grid {
+  stroke: var(--ll-border);
+  stroke-width: 1;
+  stroke-dasharray: 2 3;
+}
+.ll svg .ring {
+  stroke: var(--ll-bg);
+  stroke-width: 2;
+}
+.ll-pt {
+  transition: transform 0.12s linear;
+}
+.ll-trail {
+  fill: none;
+  stroke-width: 1;
+  opacity: 0.35;
+}

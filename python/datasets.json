@@ -1,0 +1,542 @@
+{
+  "retrieval": {
+    "domain": "Help-center search",
+    "documents": {
+      "refund": "Refund request process for returned orders",
+      "ship": "Track shipment delivery status",
+      "pass": "Reset account password",
+      "cancel": "Cancel subscription plan",
+      "damage": "Report damaged or defective product",
+      "address": "Change shipping address"
+    },
+    "train": [
+      {
+        "text": "i want my money back",
+        "doc": "refund"
+      },
+      {
+        "text": "how do i get reimbursed",
+        "doc": "refund"
+      },
+      {
+        "text": "give me a refund for this",
+        "doc": "refund"
+      },
+      {
+        "text": "where is my package",
+        "doc": "ship"
+      },
+      {
+        "text": "parcel has not arrived",
+        "doc": "ship"
+      },
+      {
+        "text": "order taking forever to come",
+        "doc": "ship"
+      },
+      {
+        "text": "cant log in",
+        "doc": "pass"
+      },
+      {
+        "text": "forgot my login details",
+        "doc": "pass"
+      },
+      {
+        "text": "locked out and cant sign in",
+        "doc": "pass"
+      },
+      {
+        "text": "stop charging me every month",
+        "doc": "cancel"
+      },
+      {
+        "text": "end my membership",
+        "doc": "cancel"
+      },
+      {
+        "text": "quit monthly billing",
+        "doc": "cancel"
+      },
+      {
+        "text": "item arrived broken",
+        "doc": "damage"
+      },
+      {
+        "text": "screen is cracked",
+        "doc": "damage"
+      },
+      {
+        "text": "box was smashed in transit",
+        "doc": "damage"
+      },
+      {
+        "text": "i moved to a new house",
+        "doc": "address"
+      },
+      {
+        "text": "wrong place to deliver",
+        "doc": "address"
+      },
+      {
+        "text": "update where you send it",
+        "doc": "address"
+      }
+    ],
+    "test": [
+      {
+        "text": "get my money reimbursed",
+        "doc": "refund"
+      },
+      {
+        "text": "package still not arrived",
+        "doc": "ship"
+      },
+      {
+        "text": "forgot how to sign in",
+        "doc": "pass"
+      },
+      {
+        "text": "end monthly charging",
+        "doc": "cancel"
+      },
+      {
+        "text": "item cracked and broken",
+        "doc": "damage"
+      },
+      {
+        "text": "send it to my new house",
+        "doc": "address"
+      }
+    ],
+    "hard_negative": {
+      "refund": "cancel",
+      "ship": "address",
+      "pass": "cancel",
+      "cancel": "refund",
+      "damage": "refund",
+      "address": "ship"
+    },
+    "related": [
+      [
+        "refund",
+        "damage"
+      ],
+      [
+        "refund",
+        "cancel"
+      ],
+      [
+        "ship",
+        "address"
+      ],
+      [
+        "ship",
+        "damage"
+      ]
+    ]
+  },
+  "similarity": {
+    "domain": "Product-review similarity",
+    "documents": {
+      "bgood": "Battery life is excellent",
+      "bbad": "Battery drains too quickly",
+      "sgood": "Sound quality is excellent",
+      "sbad": "Sound quality is poor",
+      "fgood": "Very comfortable to wear",
+      "fbad": "Uncomfortable to wear"
+    },
+    "train": [
+      {
+        "text": "charge lasts all week",
+        "doc": "bgood"
+      },
+      {
+        "text": "battery goes for days",
+        "doc": "bgood"
+      },
+      {
+        "text": "rarely need to recharge",
+        "doc": "bgood"
+      },
+      {
+        "text": "dies after two hours",
+        "doc": "bbad"
+      },
+      {
+        "text": "battery drains so fast",
+        "doc": "bbad"
+      },
+      {
+        "text": "constantly need to recharge",
+        "doc": "bbad"
+      },
+      {
+        "text": "crisp highs and deep bass",
+        "doc": "sgood"
+      },
+      {
+        "text": "audio is amazing",
+        "doc": "sgood"
+      },
+      {
+        "text": "music sounds rich",
+        "doc": "sgood"
+      },
+      {
+        "text": "muddy and tinny audio",
+        "doc": "sbad"
+      },
+      {
+        "text": "bass is weak",
+        "doc": "sbad"
+      },
+      {
+        "text": "music sounds flat",
+        "doc": "sbad"
+      },
+      {
+        "text": "feels like nothing on my head",
+        "doc": "fgood"
+      },
+      {
+        "text": "soft cushions all day",
+        "doc": "fgood"
+      },
+      {
+        "text": "can wear for hours",
+        "doc": "fgood"
+      },
+      {
+        "text": "hurts after an hour",
+        "doc": "fbad"
+      },
+      {
+        "text": "pinches my ears",
+        "doc": "fbad"
+      },
+      {
+        "text": "too tight and heavy",
+        "doc": "fbad"
+      }
+    ],
+    "test": [
+      {
+        "text": "lasts days on one charge",
+        "doc": "bgood"
+      },
+      {
+        "text": "drains after two hours",
+        "doc": "bbad"
+      },
+      {
+        "text": "amazing deep bass",
+        "doc": "sgood"
+      },
+      {
+        "text": "weak and tinny sound",
+        "doc": "sbad"
+      },
+      {
+        "text": "soft and light for hours",
+        "doc": "fgood"
+      },
+      {
+        "text": "tight and hurts my ears",
+        "doc": "fbad"
+      }
+    ],
+    "hard_negative": {
+      "bgood": "bbad",
+      "bbad": "bgood",
+      "sgood": "sbad",
+      "sbad": "sgood",
+      "fgood": "fbad",
+      "fbad": "fgood"
+    },
+    "related": [
+      [
+        "bgood",
+        "bbad"
+      ],
+      [
+        "sgood",
+        "sbad"
+      ],
+      [
+        "fgood",
+        "fbad"
+      ]
+    ]
+  },
+  "clustering": {
+    "domain": "IT ticket routing",
+    "documents": {
+      "net": "Network and VPN issues",
+      "hw": "Laptop hardware repair",
+      "acc": "Account access and permissions",
+      "mail": "Email and calendar support",
+      "print": "Printer problems",
+      "sw": "Software installs and licenses"
+    },
+    "train": [
+      {
+        "text": "wifi keeps dropping",
+        "doc": "net"
+      },
+      {
+        "text": "vpn wont connect from home",
+        "doc": "net"
+      },
+      {
+        "text": "internet is really slow",
+        "doc": "net"
+      },
+      {
+        "text": "laptop screen flickers",
+        "doc": "hw"
+      },
+      {
+        "text": "keyboard keys stuck",
+        "doc": "hw"
+      },
+      {
+        "text": "battery swollen on my laptop",
+        "doc": "hw"
+      },
+      {
+        "text": "need permissions for the shared drive",
+        "doc": "acc"
+      },
+      {
+        "text": "account locked after password change",
+        "doc": "acc"
+      },
+      {
+        "text": "request admin rights",
+        "doc": "acc"
+      },
+      {
+        "text": "outlook not syncing",
+        "doc": "mail"
+      },
+      {
+        "text": "meeting invites not arriving",
+        "doc": "mail"
+      },
+      {
+        "text": "inbox full cannot receive mail",
+        "doc": "mail"
+      },
+      {
+        "text": "printer jammed on floor 3",
+        "doc": "print"
+      },
+      {
+        "text": "cant find the printer",
+        "doc": "print"
+      },
+      {
+        "text": "prints come out blank",
+        "doc": "print"
+      },
+      {
+        "text": "install python on my machine",
+        "doc": "sw"
+      },
+      {
+        "text": "excel crashes on startup",
+        "doc": "sw"
+      },
+      {
+        "text": "need a license for figma",
+        "doc": "sw"
+      }
+    ],
+    "test": [
+      {
+        "text": "vpn drops every few minutes",
+        "doc": "net"
+      },
+      {
+        "text": "laptop keyboard stopped working",
+        "doc": "hw"
+      },
+      {
+        "text": "locked out and need drive access",
+        "doc": "acc"
+      },
+      {
+        "text": "outlook invites not syncing",
+        "doc": "mail"
+      },
+      {
+        "text": "floor 3 printer jammed again",
+        "doc": "print"
+      },
+      {
+        "text": "need a license to install excel",
+        "doc": "sw"
+      }
+    ],
+    "hard_negative": {
+      "net": "mail",
+      "hw": "print",
+      "acc": "mail",
+      "mail": "acc",
+      "print": "hw",
+      "sw": "hw"
+    },
+    "related": [
+      [
+        "net",
+        "mail"
+      ],
+      [
+        "acc",
+        "mail"
+      ],
+      [
+        "hw",
+        "print"
+      ],
+      [
+        "sw",
+        "hw"
+      ]
+    ]
+  },
+  "dedup": {
+    "domain": "Duplicate-question detection",
+    "documents": {
+      "rev": "How to reverse a list in Python",
+      "sortd": "How to sort a dictionary by value",
+      "undo": "How to undo the last git commit",
+      "delb": "How to delete a git branch",
+      "center": "How to center a div in CSS",
+      "font": "How to change font size in CSS"
+    },
+    "train": [
+      {
+        "text": "flip order of python list",
+        "doc": "rev"
+      },
+      {
+        "text": "python list backwards",
+        "doc": "rev"
+      },
+      {
+        "text": "invert list elements order",
+        "doc": "rev"
+      },
+      {
+        "text": "order dict by its values",
+        "doc": "sortd"
+      },
+      {
+        "text": "sort python dict values ascending",
+        "doc": "sortd"
+      },
+      {
+        "text": "rank dictionary entries by value",
+        "doc": "sortd"
+      },
+      {
+        "text": "revert my most recent commit",
+        "doc": "undo"
+      },
+      {
+        "text": "git remove last commit",
+        "doc": "undo"
+      },
+      {
+        "text": "take back a commit i just made",
+        "doc": "undo"
+      },
+      {
+        "text": "remove local branch git",
+        "doc": "delb"
+      },
+      {
+        "text": "get rid of old branch",
+        "doc": "delb"
+      },
+      {
+        "text": "git branch cleanup delete",
+        "doc": "delb"
+      },
+      {
+        "text": "align div in the middle",
+        "doc": "center"
+      },
+      {
+        "text": "css horizontally and vertically center element",
+        "doc": "center"
+      },
+      {
+        "text": "put box in center of page",
+        "doc": "center"
+      },
+      {
+        "text": "make text bigger css",
+        "doc": "font"
+      },
+      {
+        "text": "css text size larger",
+        "doc": "font"
+      },
+      {
+        "text": "increase heading font",
+        "doc": "font"
+      }
+    ],
+    "test": [
+      {
+        "text": "flip list backwards",
+        "doc": "rev"
+      },
+      {
+        "text": "rank dict entries ascending",
+        "doc": "sortd"
+      },
+      {
+        "text": "take back my recent commit",
+        "doc": "undo"
+      },
+      {
+        "text": "get rid of old local one",
+        "doc": "delb"
+      },
+      {
+        "text": "align box in the middle",
+        "doc": "center"
+      },
+      {
+        "text": "larger heading text",
+        "doc": "font"
+      }
+    ],
+    "hard_negative": {
+      "rev": "sortd",
+      "sortd": "rev",
+      "undo": "delb",
+      "delb": "undo",
+      "center": "font",
+      "font": "center"
+    },
+    "related": [
+      [
+        "rev",
+        "sortd"
+      ],
+      [
+        "undo",
+        "delb"
+      ],
+      [
+        "center",
+        "font"
+      ]
+    ]
+  }
+}

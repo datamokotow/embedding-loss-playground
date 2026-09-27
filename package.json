@@ -1,0 +1,12 @@
+{
+  "name": "embedding-loss-playground",
+  "version": "1.0.0",
+  "description": "Fine-tune a tiny embedding model in the browser with 7 sentence-transformers losses and watch what each one does.",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "test": "node tests/gradcheck.mjs",
+    "build": "node scripts/build.mjs",
+    "export-data": "node scripts/export-data.mjs"
+  }
+}

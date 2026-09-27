@@ -1,0 +1,14 @@
+---
+// Drop-in Astro component. Usage:
+//   import LossPlayground from './LossPlayground.astro'
+//   <LossPlayground />
+// Your site needs the theme variables described in astro/README.md.
+import '../src/playground.css'
+---
+
+<div data-ll-mount></div>
+
+<script>
+  import { mountPlayground } from '../src/playground.js'
+  document.querySelectorAll('[data-ll-mount]').forEach((el) => mountPlayground(el as HTMLElement))
+</script>
