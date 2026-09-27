@@ -54,6 +54,8 @@ npm run build       # rebuild index.html after editing src/
 npm run export-data # refresh python/datasets.json from src/data.js
 ```
 
+Every push to `main` runs the tests and publishes `index.html` to GitHub Pages through [`.github/workflows/pages.yml`](.github/workflows/pages.yml). The workflow also fails if `index.html` wasn't rebuilt after a change to `src/`.
+
 `npm test` compares every hand-written gradient against central finite differences, both per loss and through the full model, and checks that 40 epochs of each loss lowers held-out loss.
 
 ## Train a real model with the same setup
